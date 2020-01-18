@@ -1,0 +1,166 @@
+name: C/C++ CI
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - root@root: ~/humanoid$ gpio -v
+                  gpio version: 2.44-5.3
+                  Copyright (c) 2012-2017 Gordon Henderson, 2017-2019 Hardkernel Co., Ltd.
+                  This is free software with ABSOLUTELY NO WARRANTY.
+                  For details type: gpio -warranty
+
+                  No "Hardware" line
+    - root@root ~/humanoid$: g++ robot.cpp.cpp -o robot.cpp $(pkg-config --cflags --libs opencv -lwiringPi)
+                            Unknown option -lwiringPi
+                            /tmp/cc8RDISj.o: In function `createTrackBarsHSL()':
+                            robot.cpp.cpp:(.text+0x15b): undefined reference to `cv::namedWindow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)'
+                            robot.cpp.cpp:(.text+0x1a9): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0x212): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0x27b): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0x2e4): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0x34d): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            /tmp/cc8RDISj.o:robot.cpp.cpp:(.text+0x3b6): more undefined references to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)' follow
+                            /tmp/cc8RDISj.o: In function `createTrackBarsHSL()':
+                            robot.cpp.cpp:(.text+0x3e5): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x3f9): undefined reference to `cv::imshow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cv::_InputArray const&)'
+                            /tmp/cc8RDISj.o: In function `createTrackBarsHSV()':
+                            robot.cpp.cpp:(.text+0x55f): undefined reference to `cv::namedWindow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)'
+                            robot.cpp.cpp:(.text+0x5ad): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0x616): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0x67f): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0x6e8): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0x751): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            /tmp/cc8RDISj.o:robot.cpp.cpp:(.text+0x7ba): more undefined references to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)' follow
+                            /tmp/cc8RDISj.o: In function `createTrackBarsHSV()':
+                            robot.cpp.cpp:(.text+0x7e9): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x7fd): undefined reference to `cv::imshow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cv::_InputArray const&)'
+                            /tmp/cc8RDISj.o: In function `createTrackBarsLAB()':
+                            robot.cpp.cpp:(.text+0x963): undefined reference to `cv::namedWindow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int)'
+                            robot.cpp.cpp:(.text+0x9b1): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0xa1a): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0xa83): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0xaec): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            robot.cpp.cpp:(.text+0xb55): undefined reference to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)'
+                            /tmp/cc8RDISj.o:robot.cpp.cpp:(.text+0xbbe): more undefined references to `cv::createTrackbar(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, int*, int, void (*)(int, void*), void*)' follow
+                            /tmp/cc8RDISj.o: In function `createTrackBarsLAB()':
+                            robot.cpp.cpp:(.text+0xbed): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0xc01): undefined reference to `cv::imshow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cv::_InputArray const&)'
+                            /tmp/cc8RDISj.o: In function `morphOps(cv::Mat&)':
+                            robot.cpp.cpp:(.text+0xdb3): undefined reference to `cv::getStructuringElement(int, cv::Size_<int>, cv::Point_<int>)'
+                            robot.cpp.cpp:(.text+0xe04): undefined reference to `cv::getStructuringElement(int, cv::Size_<int>, cv::Point_<int>)'
+                            robot.cpp.cpp:(.text+0xe45): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0xe5e): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0xe77): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0xeb3): undefined reference to `cv::erode(cv::_InputArray const&, cv::_OutputArray const&, cv::_InputArray const&, cv::Point_<int>, int, int, cv::Scalar_<double> const&)'
+                            robot.cpp.cpp:(.text+0xef8): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0xf11): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0xf2a): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0xf66): undefined reference to `cv::erode(cv::_InputArray const&, cv::_OutputArray const&, cv::_InputArray const&, cv::Point_<int>, int, int, cv::Scalar_<double> const&)'
+                            robot.cpp.cpp:(.text+0xfa8): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0xfc1): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0xfda): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x1016): undefined reference to `cv::dilate(cv::_InputArray const&, cv::_OutputArray const&, cv::_InputArray const&, cv::Point_<int>, int, int, cv::Scalar_<double> const&)'
+                            robot.cpp.cpp:(.text+0x1058): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x1071): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0x108a): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x10c6): undefined reference to `cv::dilate(cv::_InputArray const&, cv::_OutputArray const&, cv::_InputArray const&, cv::Point_<int>, int, int, cv::Scalar_<double> const&)'
+                            /tmp/cc8RDISj.o: In function `servoGerak(int, int)':
+                            robot.cpp.cpp:(.text+0x1383): undefined reference to `serialPuts'
+                            /tmp/cc8RDISj.o: In function `cekSensor()':
+                            robot.cpp.cpp:(.text+0x1526): undefined reference to `digitalRead'
+                            /tmp/cc8RDISj.o: In function `send2CM(int)':
+                            robot.cpp.cpp:(.text+0x15a1): undefined reference to `digitalWrite'
+                            robot.cpp.cpp:(.text+0x15d0): undefined reference to `digitalWrite'
+                            /tmp/cc8RDISj.o: In function `myInterrupt()':
+                            robot.cpp.cpp:(.text+0x1605): undefined reference to `digitalRead'
+                            /tmp/cc8RDISj.o: In function `ledState(int)':
+                            robot.cpp.cpp:(.text+0x169f): undefined reference to `digitalWrite'
+                            robot.cpp.cpp:(.text+0x16b3): undefined reference to `digitalWrite'
+                            robot.cpp.cpp:(.text+0x16cf): undefined reference to `digitalWrite'
+                            robot.cpp.cpp:(.text+0x16e3): undefined reference to `digitalWrite'
+                            /tmp/cc8RDISj.o: In function `initKomunikasi()':
+                            robot.cpp.cpp:(.text+0x1713): undefined reference to `pinMode'
+                            robot.cpp.cpp:(.text+0x173e): undefined reference to `pinMode'
+                            robot.cpp.cpp:(.text+0x1769): undefined reference to `pinMode'
+                            robot.cpp.cpp:(.text+0x1794): undefined reference to `pinMode'
+                            robot.cpp.cpp:(.text+0x17a9): undefined reference to `pinMode'
+                            /tmp/cc8RDISj.o:robot.cpp.cpp:(.text+0x17b8): more undefined references to `pinMode' follow
+                            /tmp/cc8RDISj.o: In function `initKomunikasi()':
+                            robot.cpp.cpp:(.text+0x17c7): undefined reference to `digitalWrite'
+                            robot.cpp.cpp:(.text+0x17d6): undefined reference to `digitalWrite'
+                            robot.cpp.cpp:(.text+0x17e0): undefined reference to `delay'
+                            /tmp/cc8RDISj.o: In function `main':
+                            robot.cpp.cpp:(.text+0x1823): undefined reference to `cv::VideoCapture::VideoCapture()'
+                            robot.cpp.cpp:(.text+0x1837): undefined reference to `cv::VideoCapture::open(int)'
+                            robot.cpp.cpp:(.text+0x1864): undefined reference to `cv::VideoCapture::set(int, double)'
+                            robot.cpp.cpp:(.text+0x1891): undefined reference to `cv::VideoCapture::set(int, double)'
+                            robot.cpp.cpp:(.text+0x18a0): undefined reference to `serialOpen'
+                            robot.cpp.cpp:(.text+0x18f2): undefined reference to `wiringPiSetup'
+                            robot.cpp.cpp:(.text+0x194a): undefined reference to `wiringPiISR'
+                            robot.cpp.cpp:(.text+0x1af8): undefined reference to `cv::VideoCapture::read(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0x1b1b): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0x1b2f): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x1b4f): undefined reference to `cv::cvtColor(cv::_InputArray const&, cv::_OutputArray const&, int, int)'
+                            robot.cpp.cpp:(.text+0x1b63): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0x1b77): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x1b97): undefined reference to `cv::cvtColor(cv::_InputArray const&, cv::_OutputArray const&, int, int)'
+                            robot.cpp.cpp:(.text+0x1bab): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0x1bbf): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x1bdf): undefined reference to `cv::cvtColor(cv::_InputArray const&, cv::_OutputArray const&, int, int)'
+                            robot.cpp.cpp:(.text+0x1c82): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0x1d36): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x1d5a): undefined reference to `cv::inRange(cv::_InputArray const&, cv::_InputArray const&, cv::_InputArray const&, cv::_OutputArray const&)'
+                            robot.cpp.cpp:(.text+0x1d6e): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0x1e22): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x1e46): undefined reference to `cv::inRange(cv::_InputArray const&, cv::_InputArray const&, cv::_InputArray const&, cv::_OutputArray const&)'
+                            robot.cpp.cpp:(.text+0x1e5a): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0x1f0e): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x1f32): undefined reference to `cv::inRange(cv::_InputArray const&, cv::_InputArray const&, cv::_InputArray const&, cv::_OutputArray const&)'
+                            robot.cpp.cpp:(.text+0x1f7c): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x1fb9): undefined reference to `cv::imshow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cv::_InputArray const&)'
+                            robot.cpp.cpp:(.text+0x1fd9): undefined reference to `cv::noArray()'
+                            robot.cpp.cpp:(.text+0x1ff0): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0x2004): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x2018): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x2038): undefined reference to `cv::bitwise_and(cv::_InputArray const&, cv::_InputArray const&, cv::_OutputArray const&, cv::_InputArray const&)'
+                            robot.cpp.cpp:(.text+0x204c): undefined reference to `cv::_OutputArray::_OutputArray(cv::Mat&)'
+                            robot.cpp.cpp:(.text+0x2060): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x20a5): undefined reference to `cv::Canny(cv::_InputArray const&, cv::_OutputArray const&, double, double, int, bool)'
+                            robot.cpp.cpp:(.text+0x20e1): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x212b): undefined reference to `cv::HoughLinesP(cv::_InputArray const&, cv::_OutputArray const&, double, double, int, double, double)'
+                            robot.cpp.cpp:(.text+0x2276): undefined reference to `cv::line(cv::Mat&, cv::Point_<int>, cv::Point_<int>, cv::Scalar_<double> const&, int, int, int)'
+                            robot.cpp.cpp:(.text+0x23e3): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x2420): undefined reference to `cv::imshow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cv::_InputArray const&)'
+                            robot.cpp.cpp:(.text+0x244f): undefined reference to `cv::_InputArray::_InputArray(cv::Mat const&)'
+                            robot.cpp.cpp:(.text+0x248c): undefined reference to `cv::imshow(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, cv::_InputArray const&)'
+                            robot.cpp.cpp:(.text+0x24b1): undefined reference to `cv::waitKey(int)'
+                            robot.cpp.cpp:(.text+0x2659): undefined reference to `cv::line(cv::Mat&, cv::Point_<int>, cv::Point_<int>, cv::Scalar_<double> const&, int, int, int)'
+                            robot.cpp.cpp:(.text+0x2906): undefined reference to `cvWaitKey'
+                            robot.cpp.cpp:(.text+0x2919): undefined reference to `digitalRead'
+                            robot.cpp.cpp:(.text+0x293f): undefined reference to `cv::VideoCapture::~VideoCapture()'
+                            robot.cpp.cpp:(.text+0x2a0e): undefined reference to `cv::VideoCapture::~VideoCapture()'
+                            /tmp/cc8RDISj.o: In function `cv::Mat::~Mat()':
+                            robot.cpp.cpp:(.text._ZN2cv3MatD2Ev[_ZN2cv3MatD5Ev]+0x39): undefined reference to `cv::fastFree(void*)'
+                            /tmp/cc8RDISj.o: In function `cv::Mat::operator=(cv::Mat const&)':
+                            robot.cpp.cpp:(.text._ZN2cv3MataSERKS0_[_ZN2cv3MataSERKS0_]+0x111): undefined reference to `cv::Mat::copySize(cv::Mat const&)'
+                            /tmp/cc8RDISj.o: In function `cv::Mat::release()':
+                            robot.cpp.cpp:(.text._ZN2cv3Mat7releaseEv[_ZN2cv3Mat7releaseEv]+0x47): undefined reference to `cv::Mat::deallocate()'
+                            /tmp/cc8RDISj.o: In function `cv::_InputArray::_InputArray(cv::Scalar_<double> const&)':
+                            robot.cpp.cpp:(.text._ZN2cv11_InputArrayC2ERKNS_7Scalar_IdEE[_ZN2cv11_InputArrayC5ERKNS_7Scalar_IdEE]+0x11): undefined reference to `vtable for cv::_InputArray'
+                            /tmp/cc8RDISj.o: In function `cv::_OutputArray::_OutputArray<cv::Vec<int, 4> >(std::vector<cv::Vec<int, 4>, std::allocator<cv::Vec<int, 4> > >&)':
+                            robot.cpp.cpp:(.text._ZN2cv12_OutputArrayC2INS_3VecIiLi4EEEEERSt6vectorIT_SaIS5_EE[_ZN2cv12_OutputArrayC5INS_3VecIiLi4EEEEERSt6vectorIT_SaIS5_EE]+0x24): undefined reference to `vtable for cv::_OutputArray'
+                            /tmp/cc8RDISj.o: In function `cv::_InputArray::_InputArray<cv::Vec<int, 4> >(std::vector<cv::Vec<int, 4>, std::allocator<cv::Vec<int, 4> > > const&)':
+                            robot.cpp.cpp:(.text._ZN2cv11_InputArrayC2INS_3VecIiLi4EEEEERKSt6vectorIT_SaIS5_EE[_ZN2cv11_InputArrayC5INS_3VecIiLi4EEEEERKSt6vectorIT_SaIS5_EE]+0x11): undefined reference to `vtable for cv::_InputArray'
+                                      collect2: error: ld returned 1 exit status
+      run: ./configure
+    - name: make
+      run: make
+    - name: make check
+      run: make check
+    - name: make distcheck
+      run: make distcheck
